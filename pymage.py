@@ -11,11 +11,9 @@ import math
 import argparse
 from PIL import Image
 
-_FILES = "./"
 
-
-def resize():
-    print(f"Resize the image !! {_FILES}")
+def resize(args):
+    print(f"Resize the image !! {args.files}")
 
 
 def parse():
@@ -30,9 +28,7 @@ def parse():
         '-f', '--files', help="Dossier, fichier, ou liste de fichies séparés par des virgules")
     parserResize.set_defaults(func=resize)
     args = parser.parse_args()
-    _FILES = args.files
-    print(f"_FILES: {_FILES}, argument: {args.files}")
-    args.func()
+    args.func(args)
 
 
 def main():
