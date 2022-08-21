@@ -65,7 +65,7 @@ def performResize(files):
 def resize(args):
     print("Resizing images...")
     print("------------------")
-    performResize(parseFiles(args.files))
+    performResize(parseFiles(args.files if args.files != None else "."))
 
 
 def main():
